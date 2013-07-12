@@ -1889,6 +1889,10 @@ static netdev_tx_t rtl8152_start_xmit(struct sk_buff *skb,
 					struct net_device *netdev)
 {
 	struct r8152 *tp = netdev_priv(netdev);
+	struct net_device_stats *stats = rtl8152_get_stats(netdev);
+	struct tx_desc *tx_desc;
+	unsigned int len;
+	int res;
 
 	skb_tx_timestamp(skb);
 
