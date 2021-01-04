@@ -1,16 +1,17 @@
+
 #!/bin/bash
 
 export ARCH="arm"
-export KBUILD_BUILD_HOST="eOS-5.0-Juno"
-export KBUILD_BUILD_USER="arttttt"
+export KBUILD_BUILD_HOST="v1.0"
+export KBUILD_BUILD_USER="Dargons10"
 
 clean_build=0
-config="mocha_android_defconfig"
+config="tegra12_android_defconfig"
 dtb_name="tegra124-mocha.dtb"
 dtb_only=0
 kernel_name=$(git rev-parse --abbrev-ref HEAD)
 threads=5
-toolchain="$HOME/PROJECTS/MIPAD/linaro-4.9.4/bin/arm-linux-gnueabihf-"
+toolchain="$HOME/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-"
 
 KERNEL_DIR=$PWD
 ORIGINAL_OUTPUT_DIR="$KERNEL_DIR/arch/$ARCH/boot"
